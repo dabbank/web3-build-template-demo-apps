@@ -1,0 +1,15 @@
+{
+  "name": "demo-global-css-component",
+  "version": "0.0.1",
+  "description": "Web 3.0 portal JavaScript based environment",
+  "private": false,
+  "main": [
+    "./egal.js"
+  ],
+  "ignore": [
+    "bower_components"
+  ],
+  "devDependencies": {
+    "demo-external-libs-component" : "*"
+  }
+}

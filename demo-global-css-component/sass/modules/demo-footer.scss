@@ -1,0 +1,22 @@
+.demo-footer {
+  float: left;
+  width: 100%;
+}
+
+.demo-footer__info {
+  float: left;
+  width: 100%;
+  padding: 15px 0;
+
+  @include box-shadow(0 2px 2px rgba(#707070, 0.3));
+
+  background: $demoColorContentBackground;
+}
+
+.demo-footer__info__bic {
+  text-align: right;
+}
+
+.demo-footer__item {
+  min-height: 220px;
+}
