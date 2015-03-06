@@ -1,0 +1,13 @@
+{
+  "name": "dab-simple-app-page",
+  "version": "0.0.1",
+  "description": "dab-simple-app-page",
+  "repository": "http:someurl.de",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "gulp": "3.8.10",
+    "web3-common-build-setup": "0.3.0"
+  }
+}
