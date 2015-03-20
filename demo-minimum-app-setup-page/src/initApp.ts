@@ -1,0 +1,1 @@
+console.log("code for initialization, e.g. angular modules and bootstrap");
