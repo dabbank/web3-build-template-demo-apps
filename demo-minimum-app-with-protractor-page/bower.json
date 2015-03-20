@@ -1,0 +1,11 @@
+{
+  "private": false,
+  "name": "dab-simple-app-page",
+  "version": "0.0.1",
+  "main": [
+    "./egal.js"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.13"
+  }
+}

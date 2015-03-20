@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - target/app.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>target/app.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">80.75</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">196</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">28.42</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.23</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">var dab;
+(function (dab) {
+    var demo;
+    (function (demo) {
+        /**
+         * @ngdoc overview
+         * @name rfx.directive:rAutogrow
+         * @element textarea
+         * @function
+         *
+         * @description
+         * AAAResize textarea automatically to the size of its text content.
+         *
+         * **Note:** ie&lt;9 needs pollyfill for window.getComputedStyle
+         *
+         * @example
+         &lt;example module=&quot;rfx&quot;&gt;
+         &lt;file name=&quot;index.html&quot;&gt;
+         &lt;textarea ng-model=&quot;text&quot;rx-autogrow class=&quot;input-block-level&quot;&gt;&lt;/textarea&gt;
+         &lt;pre&gt;{{text}}&lt;/pre&gt;
+         &lt;/file&gt;
+         &lt;/example&gt;
+         */
+        // need to be loaded first
+        angular.module(&quot;dab-demo-page&quot;, [
+            &quot;ui.bootstrap&quot;,
+            &quot;dabTemplatecache&quot;,
+            &quot;ngLocale&quot;
+        ]);
+        angular.element(document).ready(function () {
+            angular.bootstrap(document.body, [&quot;dab-demo-page&quot;]);
+        });
+        angular.module(&quot;dab-demo-page&quot;).config(function ($provide, $httpProvider) {
+            //        de.dab.common.standaloneMockHTTP_CONFIG($provide, $httpProvider);
+        });
+    })(demo = dab.demo || (dab.demo = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var demo;
+    (function (demo) {
+        /**
+         * @description some example
+         */
+        var DemoController = (function () {
+            function DemoController($scope, demoDataService) {
+                this.$scope = $scope;
+                this.demoDataService = demoDataService;
+                this.$scope.demoModel = &quot;123&quot;;
+            }
+            return DemoController;
+        })();
+        // Registration of bean
+        angular.module(&quot;dab-demo-page&quot;).controller(&quot;demoController&quot;, DemoController);
+    })(demo = dab.demo || (dab.demo = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var pfm;
+    (function (pfm) {
+        var demo;
+        (function (demo) {
+            var DabDemoPart1Directive = (function () {
+                function DabDemoPart1Directive() {
+                    /*
+                     Only use if really needs isolated scope!
+                     scope:any = {
+                         readOnly : &quot;@&quot;
+                         functionCall : &quot;&amp;&quot;
+                         bidirectional : &quot;=&quot;
+                     };
+                    */
+                    // actually a name, not a path, compiled a build time
+                    this.templateUrl = &quot;/dab/demo/content-demo-part1/dab-demo-part1-directive.tpl.html&quot;;
+                }
+                return DabDemoPart1Directive;
+            })();
+            angular.module(&quot;dab-demo-page&quot;).directive(&quot;dabDemoPart1Directive&quot;, function () { return new DabDemoPart1Directive(); });
+        })(demo = pfm.demo || (pfm.demo = {}));
+    })(pfm = dab.pfm || (dab.pfm = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var pfm;
+    (function (pfm) {
+        var demo;
+        (function (demo) {
+            var DabDemoPart2Directive = (function () {
+                function DabDemoPart2Directive() {
+                }
+                DabDemoPart2Directive.dabDemoDirective_instance = function () {
+                    return {
+                        /*
+                         Only use if really needs isolated scope!
+                         scope: {
+                         readOnly : &quot;@&quot;
+                         functionCall : &quot;&amp;&quot;
+                         bidirectional : &quot;=&quot;
+                         }
+                         */
+                        templateUrl: &quot;/dab/demo/content-demo-part2/dab-demo-part2-directive.tpl.html&quot;
+                    };
+                };
+                return DabDemoPart2Directive;
+            })();
+            angular.module(&quot;dab-demo-page&quot;).directive(&quot;dabDemoPart2Directive&quot;, DabDemoPart2Directive.dabDemoDirective_instance);
+        })(demo = pfm.demo || (pfm.demo = {}));
+    })(pfm = dab.pfm || (dab.pfm = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var pfm;
+    (function (pfm) {
+        var demo;
+        (function (demo) {
+            var DabDemoDirective = (function () {
+                function DabDemoDirective() {
+                }
+                DabDemoDirective.dabDemoDirective_instance = function () {
+                    return {
+                        /*
+                         Only use if really needs isolated scope!
+                         scope: {
+                         readOnly : &quot;@&quot;
+                         functionCall : &quot;&amp;&quot;
+                         bidirectional : &quot;=&quot;
+                         }
+                         */
+                        templateUrl: &quot;/dab/demo/directives/dab-demo-directive.tpl.html&quot;
+                    };
+                };
+                return DabDemoDirective;
+            })();
+            angular.module(&quot;dab-demo-page&quot;).directive(&quot;dabDemoDirective&quot;, DabDemoDirective.dabDemoDirective_instance);
+        })(demo = pfm.demo || (pfm.demo = {}));
+    })(pfm = dab.pfm || (dab.pfm = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var demo;
+    (function (demo) {
+        var services;
+        (function (services) {
+            /**
+             * backToTop Directive
+             * @param  {Function} $anchorScroll
+             * @description Ensure that the browser scrolls when the anchor is clicked
+             */
+            var DemoDataService = (function () {
+                function DemoDataService(demoDataSource) {
+                    this.demoDataSource = demoDataSource;
+                }
+                // return average of country
+                DemoDataService.prototype.getServerData = function (id) {
+                    var response = this.demoDataSource.fetchDemoData(id);
+                    return response;
+                };
+                DemoDataService.prototype.getExtractedNumbers = function (toBeExtracted) {
+                    //_.map(toBeExtracted, &quot;amount&quot;);
+                    return null;
+                };
+                //
+                DemoDataService.prototype.calculateAverage = function (absoluteValues) {
+                    //var result = _.reduce(toBeExtracted, function(){
+                    //
+                    //});
+                    return null;
+                };
+                return DemoDataService;
+            })();
+            angular.module(&quot;dab-demo-page&quot;).service(&quot;demoDataService&quot;, DemoDataService);
+        })(services = demo.services || (demo.services = {}));
+    })(demo = dab.demo || (dab.demo = {}));
+})(dab || (dab = {}));
+var dab;
+(function (dab) {
+    var demo;
+    (function (demo) {
+        var services;
+        (function (services) {
+            var DemoDataSource = (function () {
+                function DemoDataSource($http) {
+                    this.$http = $http;
+                    //this.serverDataConfig = ; //
+                }
+                DemoDataSource.prototype.fetchDemoData = function (id) {
+                    var url = &quot;/users/account&quot;;
+                    this.$http.get(url, this.serverDataConfig);
+                    return null;
+                };
+                return DemoDataSource;
+            })();
+            angular.module(&quot;dab-demo-page&quot;).service(&quot;demoDataSource&quot;, DemoDataSource);
+        })(services = demo.services || (demo.services = {}));
+    })(demo = dab.demo || (dab.demo = {}));
+})(dab || (dab = {}));
+//# sourceMappingURL=app.js.map</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

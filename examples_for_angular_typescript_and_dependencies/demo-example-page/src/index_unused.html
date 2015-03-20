@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="dab-bs">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>New</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lte IE 8]
+           <script src="js/ui-utils-ieshiv.js"></script>
+           <script src="js/json3.js"></script>
+    <![endif]-->
+    <!-- -->
+    <link rel="stylesheet" media="all" type="text/css" href="<%gulp= headFiles.css %>">
+</head>
+<body>
+<div>
+
+<%gulp= content %>
+
+
+
+<%gulp headFiles.js.map(function(file){ %>
+<script src="<%gulp= file %>"></script>
+<%gulp }); %>
+
+
+</div>
+</body>
+</html>

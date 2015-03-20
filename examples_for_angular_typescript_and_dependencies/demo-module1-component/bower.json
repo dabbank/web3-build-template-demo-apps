@@ -1,0 +1,18 @@
+{
+  "author": {
+    "name": "David"
+  },
+  "private": false,
+  "name": "demo-module1-component",
+  "version": "0.0.1",
+  "ignore": [
+      "bower_components"
+  ],
+  "main": [
+    "./wayne.js"
+  ],
+  "devDependencies": {
+    "demo-external-libs-component" : "*"
+  }
+
+}

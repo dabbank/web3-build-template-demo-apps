@@ -1,0 +1,18 @@
+{
+  "name": "demo-external-libs-component",
+  "version": "0.0.1",
+  "description": "external thirdparty libs, global used in portal",
+  "private": false,
+  "main": [
+    "./egal.js"
+  ],
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {    
+    "angular": "1.3.0-rc.5",    
+    "bootstrap-sass-official": "3.2.0",
+    "angular-bootstrap": "0.11.0"
+  }
+
+}
