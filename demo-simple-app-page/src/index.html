@@ -2,13 +2,31 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Example</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lte IE 8]
+           <script src="js/ui-utils-ieshiv.js"></script>
+           <script src="js/json3.js"></script>
+    <![endif]-->
+    <!-- -->
+    <link rel="stylesheet" media="all" type="text/css" href="<%gulp= headFiles.css %>">
 </head>
-<body ng-app>
-Meine Site 2
+<body>
+<div>
 
-<script type="application/javascript" src="angular.js"></script>
+<!-- frameContent.html will be placed here -->
+<%gulp= content %>
 
-<input type="checkbox" name="amount"/> Apply amount
+
+<!-- compiled app.js and all configured libs will be placed here -->
+<%gulp headFiles.js.map(function(file){ %>
+<script src="<%gulp= file %>"></script>
+<%gulp }); %>
+
+
+</div>
 </body>
 </html>
