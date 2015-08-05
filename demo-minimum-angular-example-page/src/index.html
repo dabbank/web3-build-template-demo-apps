@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <%gulp headFiles.css.map(function(file){ %>
+    <link rel="stylesheet" media="all" type="text/css" href="<%gulp= file %>">
+    <%gulp }); %>
+</head>
+
+<!-- DEVELOPMENT -->
+<!-- <%gulp= new Date()%> -->
+
+<body id="demo-minimum-angular-example-page">
+
+<div>
+    <span ng-include="'/ts_tpl/frameContent.tpl.html'"></span>
+</div>
+
+<%gulp headFiles.js.map(function(file){ %>
+<script src="<%gulp= file %>"></script>
+<%gulp }); %>
+
+</body>
+
+
+</html>

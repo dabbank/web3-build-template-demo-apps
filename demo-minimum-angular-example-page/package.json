@@ -1,0 +1,13 @@
+{
+  "name": "demo-minimum-angular-example-page",
+  "version": "0.0.1",
+  "description": "demo-minimum-angular-example-page",
+  "repository": "http:someurl.de",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "gulp": "3.8.10",
+    "web3-common-build-setup": "https://github.com/dabbank/web3-common-build-setup/archive/0.0.5.tar.gz"
+  }
+}

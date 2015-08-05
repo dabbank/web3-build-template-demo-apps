@@ -1,0 +1,13 @@
+{
+  "SERVICE": "infos",
+  "EXPIRES": null,
+  "COUNTER": 1,
+  "ERROR": null,
+  "DATA": {
+    "preferredTrader": "trade",
+    "loggedIn": true,
+    "hasDepot": true,
+    "retourPostLock": false,
+    "authGatewayAvailable": true
+  }
+}
