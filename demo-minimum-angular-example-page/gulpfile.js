@@ -18,9 +18,9 @@ CONFIG.PARTIALS.MAIN = _.constant("src/frameContent.html");
 
 CONFIG.DEV.WEBSERVER_BASE_ROOT_DIRS = function () {
     return [
-        "./", 					// For Sourcemaps
-        CONFIG.DIST.DEV_FOLDER()
-
+        //"./", 					// For Sourcemaps
+        CONFIG.DIST.DEV_FOLDER(),
+        "./bower_components/demo-minimum-sass-example-component/dev_target/"
     ];
 }
 
@@ -42,15 +42,14 @@ var minifiedLibraries =  [
 
 CONFIG.DIST.CSS.HEAD_FILE = function () {
     return [
-        ABSOLUTE + CONFIG.DIST.ROOT_PREFIX_PATH() + "basis.css",
-        ABSOLUTE + CONFIG.DIST.ROOT_PREFIX_PATH() + "bootstrap_modal.css"
+        "/demo-minimum-sass-example-component/css/main.css"
     ];
 }
 
 
 var gulpInstanceToOverride = gulpInit(gulp, CONFIG);
 
-
+// TODO reduce and move to web3-common-build-setup
 var copyMocksAndCSS = function(ENV_PATH_ROOT){
 
     gulpInstanceToOverride.src("mocks/**/*")
@@ -63,9 +62,6 @@ var copyMocksAndCSS = function(ENV_PATH_ROOT){
         .pipe(gulpInstanceToOverride.dest(ENV_PATH_ROOT + "img/"));
 
     gulpInstanceToOverride.src("src/frameContent.html")
-        .pipe(gulpInstanceToOverride.dest(ENV_PATH_ROOT));
-
-    gulpInstanceToOverride.src("bower_components/demo-bootstrap-modal-only-component/bootstrap_modal.css")
         .pipe(gulpInstanceToOverride.dest(ENV_PATH_ROOT));
 };
 
@@ -86,6 +82,7 @@ gulpInstanceToOverride.task("copyMocksAndCSS_PROD", function(){
     copyMocksAndCSS(CONFIG.DIST.DIST_FOLDER() + CONFIG.DIST.ROOT_PREFIX_PATH());
 });
 
+// TODO move to web3-common-build-setup
 var uglify = require(DEPS_FOLDER+'gulp-uglify');
 
 gulpInstanceToOverride.task("third_party_prod", function () {
