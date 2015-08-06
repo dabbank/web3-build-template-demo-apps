@@ -1,7 +1,5 @@
 // <reference path="./IDemoDataService.d.ts" />
 
-/// /// <reference path="./../../../../node_modules/web3-common-build-setup/ts_definitions/reference.d.ts" />
-
 describe("how the DemoDataService works", function () {
 
     var demoDataService;

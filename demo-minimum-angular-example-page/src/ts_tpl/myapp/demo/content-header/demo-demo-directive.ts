@@ -11,6 +11,7 @@ module demo.demo {
                  functionCall : "&"
                  bidirectional : "="
                  }
+                 restrict : 'AECM'
                  */
                 templateUrl: "/ts_tpl/myapp/demo/content-header/demo-demo-directive.tpl.html"
             };
