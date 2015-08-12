@@ -1,6 +1,6 @@
 module demo.demo {
     class RevertInputFilter {
-        public static RevertInputFilter_instance() : ng.IDirective {
+        public static RevertInputFilter_instance() {
             return (value : string) => {
                 value = value || '';
 
