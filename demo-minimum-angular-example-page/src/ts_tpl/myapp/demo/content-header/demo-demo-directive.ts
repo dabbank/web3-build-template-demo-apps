@@ -2,7 +2,7 @@
 module demo.demo {
 
     class demoDemoDirective {
-        public static demoDemoDirective_instance() {
+        public static demoDemoDirective_instance() : ng.IDirective {
             return {
                 /*
                  Only use if really needs isolated scope!
@@ -13,7 +13,8 @@ module demo.demo {
                  }
                  restrict : 'AECM'
                  */
-                templateUrl: "/ts_tpl/myapp/demo/content-header/demo-demo-directive.tpl.html"
+                templateUrl: "/ts_tpl/myapp/demo/content-header/demo-demo-directive.tpl.html",
+                controller: 'demoDirectiveController as demoDirectiveCtrl'
             };
         }
     }

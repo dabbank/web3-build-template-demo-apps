@@ -10,7 +10,7 @@ plugins.rename = require(DEPS_FOLDER + "gulp-rename");
 
 var ABSOLUTE = "/";
 CONFIG.DEV.HTML_MAIN = _.constant("src/index.html");
-CONFIG.PARTIALS.MAIN = _.constant("src/frameContent.html");
+CONFIG.PARTIALS.MAIN = _.constant("src/ts_tpl/frameContent.tpl.html");
 
 CONFIG.DEV.WEBSERVER_BASE_ROOT_DIRS = function () {
     return [
@@ -25,14 +25,14 @@ CONFIG.SRC.JS.LIBS = _.constant(
         "bower_components/angular/angular.js",
         "bower_components/angular-i18n/angular-locale_de.js",
         "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-        "bower_components/lodash/dist/lodash.compat.js"
+        "bower_components/lodash/lodash.js"
     ]);
 
 CONFIG.DIST.CSS.HEAD_FILE = function () {
     return [
         "/demo-minimum-sass-example-component/css/main.css"
     ];
-}
+};
 
 var gulpInstanceToOverride = gulpInit(gulp, CONFIG);
 
